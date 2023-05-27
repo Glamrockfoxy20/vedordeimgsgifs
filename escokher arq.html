@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exibir Imagem</title>
+  </head>
+  <body>
+    <input type="file" onchange="previewImage(event)">
+    <br>
+    <img id="imagem-preview">
+    <script>
+      function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+          var imagemPreview = document.getElementById('imagem-preview');
+          imagemPreview.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+  </body>
+</html>
+
+
